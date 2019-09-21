@@ -1,16 +1,25 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block head_title %}
+Register Here
+{% endblock %}
 {% block content %}
-    <div>
-        <h1>Sign Up</h1>
+
+<div class="col-md-4 offset-4 mt-4">
+    <!-- Card -->
+    <div class="card p-2 px-5">
+        <h1 class="card-title text-center mt-2">Sign Up</h1>
         <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Sign up</button>
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-primary px-5 btn-block">Sign up</button>
         </form>
-        <div class="">
-            <small class="">
-                Already Have An Account? <a href="" class="ml-2">Sign In</a>
-            </small>
-        </div>
+        <p class="text-center mt-2">Already Have An Account? <u><a href="{% url 'login' %}" class="ml-2 ">Sign In</a></u>
+        </p>
     </div>
+    <!-- Card -->
+</div>
+
+
+
 {% endblock content %}

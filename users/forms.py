@@ -7,11 +7,6 @@ from .models import User
 
 
 class UserRegistrationFrom(UserCreationForm):
-    # first_name = forms.CharField(max_length=255, label='First Name')
-    # last_name = forms.CharField(max_length=255, label='Last Name')
-    # hobby = forms.CharField(max_length=255, label='Hobby')
-    # avater = forms.ImageField(label='Avater')
-
     class Meta:
         model = User
         fields = [
